@@ -1,83 +1,37 @@
 activity_sensor_mean_values.csv 
 =================
 
-This dataset originates from a study where 30 individuals wore Samsung Galaxy III smartphones and recorded sensor data while performing certain activities.
-(Source: UCI machine learning)[http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#]
+This dataset originates from an experiment where 30 individuals wore Samsung Galaxy S II smartphones and recorded sensor data while performing certain activities [1].
 
-The file holds a subset of the orignal data, only representing the mean values for the individual sensor variables.
+The file holds a subset of the orignal data, only showing mean values for the individual sensor variables and mean values for Fourier transformations of the registered variables.
 
-The variables in the dataset are:
+The observations are grouped by activity and subject id.
 
+Each observation in the dataset has the following variables:
 
-|Variable name| Data type |description
------------------------|---------------------------|------------------------
-subject| Factor, levels 1 ... 30| The study subject's ID
-activity| Factor, levels "walking", "walking upstairs", "walking downstairs", "sitting", "standing", "laying"|The 6 activities recorded
-bodyacc mean() x|Numerical | Mean value for acceleration in x direction
-bodyacc mean() y|Numerical | Mean value for acceleration in y direction
-bodyacc mean() z|Numerical | Mean value for acceleration in z direction
- gravityacc mean() x|Numerical | Mean value for
- gravityacc mean() y|Numerical | Mean value for
- gravityacc mean() z| Numerical | Mean value for
- bodyaccjerk mean() x| Numerical | Mean value for
- bodyaccjerk mean() y| Numerical | Mean value for
- bodyaccjerk mean() z| Numerical | Mean value for
- bodygyro mean() x| Numerical | Mean value for
- bodygyro mean() y| Numerical | Mean value for
- bodygyro mean() z| Numerical | Mean value for
- bodygyrojerk mean() x| Numerical | Mean value for
- bodygyrojerk mean() y| Numerical | Mean value for
- bodygyrojerk mean() z| Numerical | Mean value for
- bodyaccmag mean()| Numerical | Mean value for
- gravityaccmag mean()| Numerical | Mean value for
- bodyaccjerkmag mean()| Numerical | Mean value for
- bodygyromag mean()| Numerical | Mean value for
- bodygyrojerkmag mean()| Numerical | Mean value for
- fbodyacc mean() x| Numerical | Mean value for
- fbodyacc mean() y| Numerical | Mean value for
- fbodyacc mean() z| Numerical | Mean value for
- fbodyaccjerk mean() x| Numerical | Mean value for
- fbodyaccjerk mean() y| Numerical | Mean value for
- fbodyaccjerk mean() z| Numerical | Mean value for
- fbodygyro mean() x| Numerical | Mean value for
- fbodygyro mean() y| Numerical | Mean value for
- fbodygyro mean() z| Numerical | Mean value for
- fbodyaccmag mean()| Numerical | Mean value for
- fbodybodyaccjerkmag mean()| Numerical | Mean value for
- fbodybodygyromag mean()| Numerical | Mean value for
- fbodybodygyrojerkmag mean()| Numerical | Mean value for
+*subject*: A numerical id representing one of the 30 subjects in the experiment.
+
+*activity*: One of "walking", "walking upstairs", "walking downstairs", "sitting", "standing", "laying", denoting the carried-out activity during measurement
+
+*bodyacc mean() x/y/z*: The estimated acceleration of the subject's body in the respective direction, in [g] m/s^2.
+
+*gravityacc mean() x/y/z*: The total acceleration in the respecitve direction, in [g] m/s^2.
+
+*bodyaccjerk mean() x/y/z*: derivative in time for body acceleration, resulting in [jerk] m/s^3
+
+*bodygyro mean() x/y/z*: Estimated angular velocity of the body, s^-1
+
+*bodygyrojerk mean() x/y/z*: Estimated angular jerk, derivative in time of angular velocity, s^-2
+
+*bodyaccmag/gravityaccmag/bodyaccjerkmag/bodygyromag/bodygyrojerkmag mean()*: Magnitude of the respective variables explained above
+
+*Variables with preceding 'f'*: Fast Fourier Transforms (FFT) of the respective variables already explained above.
 
 
-There were 30 indivdual subjects in the study
 
-The tidied dataset contains the mean values of the following variables:
 
-Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 
-Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+This dataset is distributed AS-IS and no responsibility implied or explicit can be addressed to the authors or their institutions for its use or misuse. Any commercial use is prohibited.
 
-These signals were used to estimate variables of the feature vector for each pattern:  
-'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
-
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
-
-The set of variables that were estimated from these signals are: 
-
-mean(): Mean value
-std(): Standard deviation
+Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
