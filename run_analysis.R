@@ -88,12 +88,14 @@ merged <- merged %>%
 
 ################################################################################
 # Create a new tidy dataset that's grouped by activity and subject
+# and summarizing by average (mean) for each variable.
 ################################################################################
 
 tidy <- merged %>%
     select(1:2, contains("mean()")) %>%
-    group_by(activity, subject)
+    group_by(activity, subject) %>%
+    summarise_each(funs(mean))
 
 
-write.csv(tidy, paste(datadir, "activity_mean_sensor_values.csv"),
+write.table(tidy, paste(datadir, "activity_mean_sensor_values.txt"),
           row.names = FALSE)
